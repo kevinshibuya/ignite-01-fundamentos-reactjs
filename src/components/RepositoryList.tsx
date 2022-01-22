@@ -3,8 +3,15 @@ import { RepositoryItem } from "./RepositoryItem";
 
 import '../styles/repositories.scss';
 
+interface Repository {
+  id: number;
+  description: string;
+  html_url: string;
+  full_name: string;
+}
+
 export function RepositoryList() {
-  const [repositories, setRepositories] = useState([]);
+  const [repositories, setRepositories] = useState<Repository[]>([]);
 
   // dont forget the second parameter!!!
   useEffect(() => {
